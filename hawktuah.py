@@ -2,14 +2,12 @@ import discord
 
 TOKEN = "a51dc72509873b7a36250357de015998f5b503214eb3f83fc36a910afb798917"
 
-# Intents allow the bot to read messages
 intents = discord.Intents.default()
 intents.messages = True
-intents.message_content = True  # Required to read message content
+intents.message_content = True
 
 client = discord.Client(intents=intents)
 
-# List of words that sound like "Hawk"
 VALID_PREFIXES = {
     "hawk", "honk", "sock", "talk", "walk", "rock", "knock",
     "clock", "mock", "shock", "dock", "block", "stock", "talk"
@@ -29,5 +27,4 @@ async def on_message(message):
         response = f"{message.author.mention} {words[-2].upper()} TUAH!"
         await message.channel.send(response)
 
-# Run the bot
 client.run(TOKEN)

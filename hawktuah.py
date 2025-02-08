@@ -20,7 +20,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.author == client.user:
-        retur
+        return
 
     words = message.content.lower().split()
     if len(words) >= 2 and words[-1] == "tuah" and words[-2] in VALID_PREFIXES:
